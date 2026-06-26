@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Menu Toggle (Simplified for now)
-  // Can add full mobile menu later if needed
+  // Mobile Menu Toggle
+  const menuIcon = document.querySelector('.menu-icon');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (menuIcon && navLinks) {
+      menuIcon.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  }
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
