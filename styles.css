@@ -3,7 +3,7 @@
   --text-color: #f0f0f0;
   --accent-color: #c9a25b; /* Luxurious gold */
   --accent-hover: #b08a47;
-  --surface-color: #1a1d24;
+  --surface-color: #252933;
   --border-color: rgba(255, 255, 255, 0.1);
   --font-main: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
@@ -16,7 +16,12 @@
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: #0b0d10;
+  background-image: 
+    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(201, 162, 91, 0.08) 150px, rgba(201, 162, 91, 0.08) 152px),
+    radial-gradient(circle at 0% 0%, rgba(201, 162, 91, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(201, 162, 91, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
   color: var(--text-color);
   font-family: var(--font-main);
   line-height: 1.6;

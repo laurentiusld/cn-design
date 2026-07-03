@@ -1,0 +1,45 @@
+{
+  "collection_name": "1.4 COLECȚIA RLV, SP MAT & RUSTIC Plăci gresie 600X1200 MM",
+  "products": [
+    {
+      "nume": "GRESIE DANTE BROWN",
+      "colectie": "1.4 COLECȚIA RLV, SP MAT & RUSTIC Plăci gresie 600X1200 MM",
+      "suprafata": "Semi-Netedă",
+      "culoare": "Maro",
+      "finisaj": "Ușor reliefat",
+      "model": "2 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-dante-brown.jpg"
+    },
+    {
+      "nume": "GRESIE FURRY BLACK",
+      "colectie": "1.4 COLECȚIA RLV, SP MAT & RUSTIC Plăci gresie 600X1200 MM",
+      "suprafata": "MAT",
+      "culoare": "Negru",
+      "finisaj": "Texturat",
+      "model": "3 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-furry-black.jpg"
+    },
+    {
+      "nume": "GRESIE TUNA ROCK GREY",
+      "colectie": "1.4 COLECȚIA RLV, SP MAT & RUSTIC Plăci gresie 600X1200 MM",
+      "suprafata": "Mat",
+      "culoare": "Gri",
+      "finisaj": "Texturat",
+      "model": "4 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-tuna-rock-grey.jpg"
+    },
+    {
+      "nume": "GRESIE TUNA ROCK ICE",
+      "colectie": "1.4 COLECȚIA RLV, SP MAT & RUSTIC Plăci gresie 600X1200 MM",
+      "suprafata": "Mat",
+      "culoare": "Gri",
+      "finisaj": "Texturat",
+      "model": "4 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-tuna-rock-ice.jpg"
+    }
+  ]
+}
