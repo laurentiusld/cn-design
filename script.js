@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
       menuIcon.addEventListener('click', () => {
           navLinks.classList.toggle('active');
       });
+
+      // Close mobile menu when a link is clicked
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+          link.addEventListener('click', () => {
+              navLinks.classList.remove('active');
+          });
+      });
   }
 
   // Smooth scroll for anchor links
@@ -133,25 +141,26 @@ function initializeFilters(containerSelector) {
 }
 
   // Reveal elements on scroll
-  const observerOptions = {
-    threshold: 0,
-    rootMargin: "0px 0px -50px 0px"
-  };
+  document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0,
+        rootMargin: "0px 0px -50px 0px"
+      };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
 
-  document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'all 0.6s ease-out';
-    observer.observe(section);
+      document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'all 0.6s ease-out';
+        observer.observe(section);
+      });
   });
-});
