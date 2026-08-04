@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despre Mine | CN Design</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="images/logo.jpg" alt="CN Design Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="index.html#despre-noi">Despre Noi</a></li>
+            <li><a href="produse.html">Produse</a></li>
+            <li><a href="proiectele-noastre.html">Proiectele Noastre</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-icon"><i data-feather="menu"></i></div>
+    </nav>
+
+    <section id="despre-mine" style="padding-top: 150px; padding-bottom: 2rem;">
+        <div class="section-container">
+            <h1 style="text-align: center; margin-bottom: 2rem;">Despre mine</h1>
+            <div class="about-me-card">
+                <h3>Despre mine</h3>
+                <div class="about-me-content" id="aboutMeContent">
+                    <p>Sunt Natalia Codrean, designer de interior, iar pentru mine designul înseamnă mult mai mult decât
+                        alegerea unor finisaje sau a unor piese de mobilier. Înseamnă să creez spații care spun o
+                        poveste, reflectă personalitatea celor care le locuiesc și le oferă starea de bine pe care o
+                        caută.</p>
+                    <p>A existat o perioadă în care, deși lucram intens în mai multe domenii, simțeam că îmi lipsește
+                        ceva. Atunci am ales să urmez școala de design interior. A fost una dintre cele mai bune decizii
+                        pe care le-am luat, pentru că mi-a confirmat ceea ce simțeam de mult timp: creativitatea,
+                        frumosul și bunul gust au făcut mereu parte din mine.</p>
+                    <p>Întotdeauna am fost atrasă de locurile bine amenajate și de emoția pe care o poate transmite un
+                        spațiu. Pentru mine este important ca fiecare client care intră în contact cu mine să se simtă
+                        ascultat, liniștit și încrezător că proiectul său este pe mâini bune.</p>
+                    <p>Fiecare proiect este diferit, la fel cum fiecare om este diferit. Tocmai asta iubesc la această
+                        profesie. Am ocazia să cunosc oameni, povești și stiluri de viață diverse, iar fiecare
+                        colaborare mă inspiră și mă ajută să mă dezvolt atât profesional, cât și personal. Îmi place să
+                        creez spații cu personalitate, adaptate nevoilor și stilului de viață al fiecărui client.</p>
+                    <p>Mi-am dorit mereu un birou cu geamuri mari, luminos și primitor. Când visul a devenit realitate,
+                        mi-am dat seama că pot face mai mult. Așa s-a născut showroomul meu – un loc în care clienții
+                        pot vedea și atinge materiale, finisaje și produse pentru amenajări interioare și exterioare,
+                        transformând procesul de alegere într-o experiență simplă și plăcută.</p>
+                    <p>Un alt aspect important pentru mine este colaborarea cu furnizori de încredere. Aleg cu atenție
+                        partenerii și negociez cele mai bune prețuri pentru clienții mei, astfel încât să beneficieze
+                        atât de produse de calitate, cât și de soluții avantajoase. În plus, ofer o gamă completă de
+                        servicii conexe, ceea ce simplifică întregul proces de amenajare, economisește timp și oferă
+                        siguranța că toate etapele sunt bine coordonate.</p>
+                    <p><strong>Cred că un design reușit nu înseamnă doar un spațiu frumos, ci unul în care te simți cu
+                            adevărat acasă.</strong></p>
+                    <p>Iubesc ceea ce fac și mi-ar plăcea să te cunosc și pe tine. Împreună putem transforma ideile tale
+                        într-un spațiu care să te reprezinte și în care să te simți fericit, zi de zi.</p>
+                </div>
+                <button class="btn btn-outline read-more-btn" id="readMoreBtn" onclick="toggleAboutMe()">Citește mai
+                    mult</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="proiecte-video" style="padding-top: 4rem; padding-bottom: 4rem; background-color: var(--bg-color);">
+        <div class="section-container">
+            <h2 style="text-align: center; margin-bottom: 4rem; color: var(--accent-color);">Echilibru & Artă</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 6rem; align-items: center; margin-top: 3rem;">
+                <!-- Project 1 -->
+                <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; max-width: 1000px;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <video src="videos/VID-20260702-WA0000.mp4" poster="images/logo.jpg" preload="none" controls
+                            style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid var(--border-color); object-fit: cover;"></video>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="color: var(--accent-color); font-size: 1.8rem; margin-bottom: 1rem;">Echilibru &
+                            Eleganță</h3>
+                        <p style="color: #ccc; font-size: 1.1rem; line-height: 1.8;">Designul interior este despre
+                            armonia proporțiilor și selecția atentă a finisajelor. În acest proiect, am integrat
+                            suprafețe ceramice premium pentru a crea un spațiu aerisit, modern, dar profund primitor.
+                            Lumina naturală pune în valoare texturile mate și reflexiile subtile, transformând fiecare
+                            unghi într-o experiență vizuală unică.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div style="display: flex; flex-wrap: wrap-reverse; gap: 3rem; align-items: center; max-width: 1000px;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="color: var(--accent-color); font-size: 1.8rem; margin-bottom: 1rem;">Artă &
+                            Funcționalitate</h3>
+                        <p style="color: #ccc; font-size: 1.1rem; line-height: 1.8;">Fiecare detaliu contează atunci
+                            când proiectăm un spațiu de lux. Am combinat accente puternice cu plăci ceramice de
+                            dimensiuni mari pentru a oferi o continuitate vizuală fluidă. Rezultatul este un ambient
+                            sofisticat, unde durabilitatea materialelor se îmbină perfect cu un stil arhitectural
+                            contemporan absolut impecabil.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <video src="videos/VID-20260702-WA0002.mp4" poster="images/logo.jpg" preload="none" controls
+                            style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid var(--border-color); object-fit: cover;"></video>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links" style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 20px;">
+            <a href="https://www.facebook.com/p/CN-Design-100076216737578/" target="_blank" rel="noopener noreferrer"
+                style="color: #fff; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.8"
+                onmouseout="this.style.opacity=1">
+                <i data-feather="facebook"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" style="color: #fff; transition: opacity 0.3s;"
+                onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+                <i data-feather="instagram"></i>
+            </a>
+        </div>
+        
+        <div class="whatsapp-contact" style="margin-bottom: 1rem; display: flex; justify-content: center;">
+            <a href="https://wa.me/40742373923" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 1.1rem; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                0742373923
+            </a>
+        </div>
+        <p>&copy; 2026 CN Design. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+
+        function toggleAboutMe() {
+            const content = document.getElementById('aboutMeContent');
+            const btn = document.getElementById('readMoreBtn');
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.textContent = 'Citește mai mult';
+            } else {
+                content.classList.add('expanded');
+                btn.textContent = 'Citește mai puțin';
+            }
+        }
+    </script>
+</body>
+
+</html>

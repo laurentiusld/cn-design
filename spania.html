@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gresie Faianță Spania | CN Design</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
     <nav>
         <a href="index.html" class="logo">
@@ -26,9 +30,26 @@
     <section style="padding-top: 150px;">
         <div class="section-container">
             <h1 style="text-align: center;">Gresie Faianță Spania</h1>
-            <p style="text-align: center; color: #aaa; margin-bottom: 4rem;"><a href="produse.html" style="color: var(--accent-color);">&larr; Înapoi la categorii</a></p>
-            
-            
+            <p style="text-align: center; color: #aaa; margin-bottom: 2rem;"><a href="produse.html"
+                    style="color: var(--accent-color);">&larr; Înapoi la categorii</a></p>
+
+            <!-- Expandable Caracteristici Tab -->
+            <div style="max-width: 800px; margin: 0 auto 4rem auto; background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                <button onclick="document.getElementById('caract-content').classList.toggle('show'); document.getElementById('caract-chevron').classList.toggle('rotate');" 
+                    style="width: 100%; padding: 1.5rem 2rem; background: rgba(30, 30, 35, 0.5); color: #fff; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: inherit; font-size: 1.1rem; font-weight: 600; transition: background 0.3s;"
+                    onmouseover="this.style.background='rgba(50, 50, 55, 0.5)'" onmouseout="this.style.background='rgba(30, 30, 35, 0.5)'">
+                    <span style="display: flex; align-items: center;"><i data-feather="info" style="margin-right: 12px; color: var(--accent-color);"></i> Caracteristici Tehnice</span>
+                    <i data-feather="chevron-down" id="caract-chevron" style="transition: transform 0.3s; color: var(--accent-color);"></i>
+                </button>
+                <div id="caract-content" style="display: none; padding: 2rem; border-top: 1px solid var(--border-color); text-align: center; background: rgba(0,0,0,0.2);">
+                    <img src="images/colectie-spania/caracteristici.png" alt="Caracteristici" style="max-width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+            <style>
+                #caract-content.show { display: block !important; }
+                #caract-chevron.rotate { transform: rotate(180deg); }
+            </style>
+
             <div style="display: flex; justify-content: center; margin-bottom: 3rem;">
                 <div style="position: relative; width: 100%; max-width: 400px;">
                     <i data-feather="search"
@@ -37,10 +58,13 @@
                         style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--surface-color); color: #fff; font-family: 'Inter', sans-serif; outline: none;">
                 </div>
             </div>
-<div class="products-grid">
+            <div class="products-grid">
                 <!-- Produs 1 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE BIBURY GREY SATINADO RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE BIBURY GREY SATINADO RECT.png"
+                        alt="GRESIE BIBURY GREY SATINADO RECT" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE BIBURY GREY SATINADO RECT 2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE BIBURY GREY SATINADO RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE BIBURY GREY SATINADO RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -60,7 +84,8 @@
 
                 <!-- Produs 2 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE BLADE BEIGE RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE BLADE BEIGE RECT.png" alt="GRESIE BLADE BEIGE RECT"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE BLADE BEIGE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -80,7 +105,8 @@
 
                 <!-- Produs 3 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE BLADE PEARL RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE BLADE PEARL RECT.png" alt="GRESIE BLADE PEARL RECT"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE BLADE PEARL RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -100,7 +126,8 @@
 
                 <!-- Produs 4 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE BONN ANTHRACITE RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE BONN ANTHRACITE RECT.png" alt="GRESIE BONN ANTHRACITE RECT"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE BONN ANTHRACITE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -120,7 +147,8 @@
 
                 <!-- Produs 5 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE BONN WHITE RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE BONN WHITE RECT.png" alt="GRESIE BONN WHITE RECT"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE BONN WHITE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -140,7 +168,8 @@
 
                 <!-- Produs 6 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE CONCORDE BLANCO SLIPSTOP RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE CONCORDE BLANCO SLIPSTOP RECT.png"
+                        alt="GRESIE CONCORDE BLANCO SLIPSTOP RECT" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE CONCORDE BLANCO SLIPSTOP RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -160,7 +189,8 @@
 
                 <!-- Produs 7 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE CONCORDE HAYA SLIPSTOP RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE CONCORDE HAYA SLIPSTOP RECT.png"
+                        alt="GRESIE CONCORDE HAYA SLIPSTOP RECT" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE CONCORDE HAYA SLIPSTOP RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -179,8 +209,11 @@
                 </div>
 
                 <!-- Produs 8 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE CONCORDE MIEL SLIPSTOP RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE CONCORDE MIEL SLIPSTOP RECT.png"
+                        alt="GRESIE CONCORDE MIEL SLIPSTOP RECT" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE CONCORDE MIEL SLIPSTOP RECT 2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE CONCORDE MIEL SLIPSTOP RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE CONCORDE MIEL SLIPSTOP RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -200,7 +233,8 @@
 
                 <!-- Produs 9 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE DALKEY BEIGE SATINADO RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE DALKEY BEIGE SATINADO RECT.png"
+                        alt="GRESIE DALKEY BEIGE SATINADO RECT" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE DALKEY BEIGE SATINADO RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -220,7 +254,8 @@
 
                 <!-- Produs 10 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE DALKEY GRIS SATINADO RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE DALKEY GRIS SATINADO RECT.png"
+                        alt="GRESIE DALKEY GRIS SATINADO RECT" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE DALKEY GRIS SATINADO RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -239,10 +274,13 @@
                 </div>
 
                 <!-- Produs 11 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE DALKEY GRIS SATINADO RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE DALKEY GRIS SATINADO RECT2.png"
+                        alt="GRESIE DALKEY GRIS SATINADO RECT 600x1200" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE DALKEY GRIS SATINADO RECT3.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE DALKEY GRIS SATINADO RECT2.png'">
                     <div class="product-info">
-                        <h3>GRESIE DALKEY GRIS SATINADO RECT</h3>
+                        <h3>GRESIE DALKEY GRIS SATINADO RECT 600x1200</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
                             <strong>Colecție:</strong> DALKEY
                         </p>
@@ -259,8 +297,11 @@
                 </div>
 
                 <!-- Produs 12 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE GOLDEN HILL SATINADO RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE GOLDEN HILL SATINADO RECT.png"
+                        alt="GRESIE GOLDEN HILL SATINADO RECT" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE GOLDEN HILL SATINADO RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE GOLDEN HILL SATINADO RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE GOLDEN HILL SATINADO RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -280,7 +321,8 @@
 
                 <!-- Produs 13 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE GRAVINA BEIGE RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE GRAVINA BEIGE RECT.png" alt="GRESIE GRAVINA BEIGE RECT"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE GRAVINA BEIGE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -299,8 +341,11 @@
                 </div>
 
                 <!-- Produs 14 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE GRAVINA WHITE RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE GRAVINA WHITE RECT.png" alt="GRESIE GRAVINA WHITE RECT"
+                        class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE GRAVINA WHITE RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE GRAVINA WHITE RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE GRAVINA WHITE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -319,8 +364,11 @@
                 </div>
 
                 <!-- Produs 15 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE HERMES BEIGE RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE HERMES BEIGE RECT.png" alt="GRESIE HERMES BEIGE RECT"
+                        class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE HERMES BEIGE RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE HERMES BEIGE RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE HERMES BEIGE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -339,8 +387,11 @@
                 </div>
 
                 <!-- Produs 16 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE HERMES IVORY RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE HERMES IVORY RECT.png" alt="GRESIE HERMES IVORY RECT"
+                        class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE HERMES IVORY RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE HERMES IVORY RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE HERMES IVORY RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -360,7 +411,8 @@
 
                 <!-- Produs 17 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE JOHNSTONE BEIGE PORT RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE JOHNSTONE BEIGE PORT RECT.png"
+                        alt="GRESIE JOHNSTONE BEIGE PORT RECT" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE JOHNSTONE BEIGE PORT RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -380,7 +432,8 @@
 
                 <!-- Produs 18 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE JOHNSTONE GREY PORT RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE JOHNSTONE GREY PORT RECT.png"
+                        alt="GRESIE JOHNSTONE GREY PORT RECT" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE JOHNSTONE GREY PORT RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -399,8 +452,11 @@
                 </div>
 
                 <!-- Produs 19 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE JOHNSTONE WHITE PORT RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE JOHNSTONE WHITE PORT RECT.png"
+                        alt="GRESIE JOHNSTONE WHITE PORT RECT" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE JOHNSTONE WHITE PORT RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE JOHNSTONE WHITE PORT RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE JOHNSTONE WHITE PORT RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -419,8 +475,11 @@
                 </div>
 
                 <!-- Produs 20 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE KINGSTON BEIGE RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE KINGSTON BEIGE RECT.png" alt="GRESIE KINGSTON BEIGE RECT"
+                        class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE KINGSTON BEIGE RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE KINGSTON BEIGE RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE KINGSTON BEIGE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -440,7 +499,8 @@
 
                 <!-- Produs 21 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE KINGSTON SAND RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE KINGSTON SAND RECT.png" alt="GRESIE KINGSTON SAND RECT"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE KINGSTON SAND RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -460,7 +520,8 @@
 
                 <!-- Produs 22 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE LECCO BLANCO RECT SLIPSTOP" class="product-image">
+                    <img src="images/colectie-spania/GRESIE LECCO BLANCO RECT SLIPSTOP.png"
+                        alt="GRESIE LECCO BLANCO RECT SLIPSTOP" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE LECCO BLANCO RECT SLIPSTOP</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -480,7 +541,8 @@
 
                 <!-- Produs 23 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE LECCO CREMA RECT SLIPSTOP" class="product-image">
+                    <img src="images/colectie-spania/GRESIE LECCO CREMA RECT SLIPSTOP.png"
+                        alt="GRESIE LECCO CREMA RECT SLIPSTOP" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE LECCO CREMA RECT SLIPSTOP</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -500,7 +562,8 @@
 
                 <!-- Produs 24 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE LECCO GRAFITO RECT SLIPSTOP" class="product-image">
+                    <img src="images/colectie-spania/GRESIE LECCO GRAFITO RECT SLIPSTOP.png"
+                        alt="GRESIE LECCO GRAFITO RECT SLIPSTOP" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE LECCO GRAFITO RECT SLIPSTOP</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -520,7 +583,8 @@
 
                 <!-- Produs 25 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE LECCO GRIS RECT SLIPSTOP" class="product-image">
+                    <img src="images/colectie-spania/GRESIE LECCO GRIS RECT SLIPSTOP.png"
+                        alt="GRESIE LECCO GRIS RECT SLIPSTOP" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE LECCO GRIS RECT SLIPSTOP</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -540,7 +604,8 @@
 
                 <!-- Produs 26 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE PUNE BLANCO RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE PUNE BLANCO RECT.png" alt="GRESIE PUNE BLANCO RECT"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE PUNE BLANCO RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -559,8 +624,11 @@
                 </div>
 
                 <!-- Produs 27 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE PUNE BLANCO PORT RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE PUNE BLANCO PORT RECT.png"
+                        alt="GRESIE PUNE BLANCO PORT RECT" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE PUNE BLANCO PORT RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE PUNE BLANCO PORT RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE PUNE BLANCO PORT RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -579,8 +647,11 @@
                 </div>
 
                 <!-- Produs 28 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE SANTA MONICA BONE RECT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE SANTA MONICA BONE RECT.png"
+                        alt="GRESIE SANTA MONICA BONE RECT" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE SANTA MONICA BONE RECT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE SANTA MONICA BONE RECT.png'">
                     <div class="product-info">
                         <h3>GRESIE SANTA MONICA BONE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -600,7 +671,8 @@
 
                 <!-- Produs 29 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE SANTA MONICA BEIGE RECT" class="product-image">
+                    <img src="images/colectie-spania/GRESIE SANTA MONICA BEIGE RECT.png"
+                        alt="GRESIE SANTA MONICA BEIGE RECT" class="product-image">
                     <div class="product-info">
                         <h3>GRESIE SANTA MONICA BEIGE RECT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -620,7 +692,9 @@
 
                 <!-- Produs 30 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE ALSACIA BLANCO" class="product-image">
+                    <img src="images/colectie-spania/GRESIE ALSACIA BLANCO.png" alt="GRESIE ALSACIA BLANCO"
+                        class="product-image hover-cycle"
+                        data-images='["images/colectie-spania/GRESIE ALSACIA BLANCO.png", "images/colectie-spania/GRESIE ALSACIA BLANCO2.png", "images/colectie-spania/GRESIE ALSACIA BLANCO3.png"]'>
                     <div class="product-info">
                         <h3>GRESIE ALSACIA BLANCO</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -639,8 +713,10 @@
                 </div>
 
                 <!-- Produs 31 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE ASPEN NATURAL" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE ASPEN NATURAL.png" alt="GRESIE ASPEN NATURAL"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE ASPEN NATURAL2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE ASPEN NATURAL.png'">
                     <div class="product-info">
                         <h3>GRESIE ASPEN NATURAL</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -660,7 +736,8 @@
 
                 <!-- Produs 32 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE ASPEN TAUPE" class="product-image">
+                    <img src="images/colectie-spania/GRESIE ASPEN TAUPE.png" alt="GRESIE ASPEN TAUPE"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE ASPEN TAUPE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -680,7 +757,8 @@
 
                 <!-- Produs 33 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE ATELIER BEIGE" class="product-image">
+                    <img src="images/colectie-spania/GRESIE ATELIER BEIGE.png" alt="GRESIE ATELIER BEIGE"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE ATELIER BEIGE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -700,7 +778,8 @@
 
                 <!-- Produs 34 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE ATELIER BLANCO" class="product-image">
+                    <img src="images/colectie-spania/GRESIE ATELIER BLANCO.png" alt="GRESIE ATELIER BLANCO"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE ATELIER BLANCO</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -719,8 +798,10 @@
                 </div>
 
                 <!-- Produs 35 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE ATELIER TAUPE" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE ATELIER TAUPE.png" alt="GRESIE ATELIER TAUPE"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE ATELIER TAUPE2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE ATELIER TAUPE.png'">
                     <div class="product-info">
                         <h3>GRESIE ATELIER TAUPE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -739,8 +820,10 @@
                 </div>
 
                 <!-- Produs 36 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE AURA LIGHT" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE AURA LIGHT.png" alt="GRESIE AURA LIGHT"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE AURA LIGHT2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE AURA LIGHT.png'">
                     <div class="product-info">
                         <h3>GRESIE AURA LIGHT</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -759,8 +842,10 @@
                 </div>
 
                 <!-- Produs 37 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE AURA SAND" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE AURA SAND.png" alt="GRESIE AURA SAND" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE AURA SAND2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE AURA SAND.png'">
                     <div class="product-info">
                         <h3>GRESIE AURA SAND</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -780,7 +865,9 @@
 
                 <!-- Produs 38 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE BARNABY SUPERWHITE" class="product-image">
+                    <img src="images/colectie-spania/GRESIE BARNABY SUPERWHITE.png" alt="GRESIE BARNABY SUPERWHITE"
+                        class="product-image hover-cycle"
+                        data-images='["images/colectie-spania/GRESIE BARNABY SUPERWHITE.png","images/colectie-spania/GRESIE BARNABY SUPERWHITE2.png", "images/colectie-spania/GRESIE BARNABY SUPERWHITE3.png"]'>
                     <div class="product-info">
                         <h3>GRESIE BARNABY SUPERWHITE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -800,7 +887,9 @@
 
                 <!-- Produs 39 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE NAOS GOLD" class="product-image">
+                    <img src="images/colectie-spania/GRESIE NAOS GOLD.png" alt="GRESIE NAOS GOLD"
+                        class="product-image hover-cycle"
+                        data-images='["images/colectie-spania/GRESIE NAOS GOLD.png","images/colectie-spania/GRESIE NAOS GOLD2.png", "images/colectie-spania/GRESIE NAOS GOLD3.png"]'>
                     <div class="product-info">
                         <h3>GRESIE NAOS GOLD</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -820,7 +909,9 @@
 
                 <!-- Produs 40 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE PANTHEON EV ALB CR" class="product-image">
+                    <img src="images/colectie-spania/GRESIE PANTHEON EV ALB CR.png" alt="GRESIE PANTHEON EV ALB CR"
+                        class="product-image hover-cycle"
+                        data-images='["images/colectie-spania/GRESIE PANTHEON EV ALB CR.png","images/colectie-spania/GRESIE PANTHEON EV ALB CR2.png", "images/colectie-spania/GRESIE PANTHEON EV ALB CR3.png"]'>
                     <div class="product-info">
                         <h3>GRESIE PANTHEON EV ALB CR</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -840,7 +931,8 @@
 
                 <!-- Produs 41 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE PECAN BEIGE" class="product-image">
+                    <img src="images/colectie-spania/GRESIE PECAN BEIGE.png" alt="GRESIE PECAN BEIGE"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE PECAN BEIGE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -860,7 +952,8 @@
 
                 <!-- Produs 42 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE PECAN GRIS" class="product-image">
+                    <img src="images/colectie-spania/GRESIE PECAN GRIS.png" alt="GRESIE PECAN GRIS"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE PECAN GRIS</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -879,8 +972,10 @@
                 </div>
 
                 <!-- Produs 43 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE PECAN TAUPE" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE PECAN TAUPE.png" alt="GRESIE PECAN TAUPE"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE PECAN TAUPE2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE PECAN TAUPE.png'">
                     <div class="product-info">
                         <h3>GRESIE PECAN TAUPE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -899,8 +994,10 @@
                 </div>
 
                 <!-- Produs 44 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE POTOMAC BLANCO" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE POTOMAC BLANCO.png" alt="GRESIE POTOMAC BLANCO"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE POTOMAC BLANCO2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE POTOMAC BLANCO.png'">
                     <div class="product-info">
                         <h3>GRESIE POTOMAC BLANCO</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -919,8 +1016,10 @@
                 </div>
 
                 <!-- Produs 45 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE POTOMAC SAND" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE POTOMAC SAND.png" alt="GRESIE POTOMAC SAND"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE POTOMAC SAND2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE POTOMAC SAND.png'">
                     <div class="product-info">
                         <h3>GRESIE POTOMAC SAND</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -940,7 +1039,8 @@
 
                 <!-- Produs 46 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE QUARTZ STONE GREY" class="product-image">
+                    <img src="images/colectie-spania/GRESIE QUARTZ STONE GREY.png" alt="GRESIE QUARTZ STONE GREY"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE QUARTZ STONE GREY</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -959,8 +1059,11 @@
                 </div>
 
                 <!-- Produs 47 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE QUARTZ STONE SAND" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE QUARTZ STONE SAND.png" alt="GRESIE QUARTZ STONE SAND"
+                        class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE QUARTZ STONE SAND2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE QUARTZ STONE SAND.png'">
                     <div class="product-info">
                         <h3>GRESIE QUARTZ STONE SAND</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -980,7 +1083,8 @@
 
                 <!-- Produs 48 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE QUARTZ STONE TAUPE" class="product-image">
+                    <img src="images/colectie-spania/GRESIE QUARTZ STONE TAUPE.png" alt="GRESIE QUARTZ STONE TAUPE"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE QUARTZ STONE TAUPE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1000,7 +1104,8 @@
 
                 <!-- Produs 49 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE QUARTZ STONE WHITE" class="product-image">
+                    <img src="images/colectie-spania/GRESIE QUARTZ STONE WHITE.png" alt="GRESIE QUARTZ STONE WHITE"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE QUARTZ STONE WHITE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1019,8 +1124,10 @@
                 </div>
 
                 <!-- Produs 50 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE TEMPO ASH" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE TEMPO ASH.png" alt="GRESIE TEMPO ASH" class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE TEMPO ASH2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE TEMPO ASH.png'">
                     <div class="product-info">
                         <h3>GRESIE TEMPO ASH</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1039,8 +1146,11 @@
                 </div>
 
                 <!-- Produs 51 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE MILLSTONE BLACK" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE MILLSTONE BLACK.png" alt="GRESIE MILLSTONE BLACK"
+                        class="product-image"
+                        onmouseover="this.src='images/colectie-spania/GRESIE MILLSTONE BLACK2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE MILLSTONE BLACK.png'">
                     <div class="product-info">
                         <h3>GRESIE MILLSTONE BLACK</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1060,7 +1170,8 @@
 
                 <!-- Produs 52 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE MILLSTONE BLACK-D" class="product-image">
+                    <img src="images/colectie-spania/GRESIE MILLSTONE BLACK-D.png" alt="GRESIE MILLSTONE BLACK-D"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE MILLSTONE BLACK-D</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1079,8 +1190,10 @@
                 </div>
 
                 <!-- Produs 53 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE MILLSTONE GREY" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE MILLSTONE GREY.png" alt="GRESIE MILLSTONE GREY"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE MILLSTONE GREY2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE MILLSTONE GREY.png'">
                     <div class="product-info">
                         <h3>GRESIE MILLSTONE GREY</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1100,7 +1213,8 @@
 
                 <!-- Produs 54 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE MILLSTONE GREY-D" class="product-image">
+                    <img src="images/colectie-spania/GRESIE MILLSTONE GREY-D.png" alt="GRESIE MILLSTONE GREY-D"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE MILLSTONE GREY-D</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1120,7 +1234,9 @@
 
                 <!-- Produs 55 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE MONTCLAIR" class="product-image">
+                    <img src="images/colectie-spania/GRESIE MONTCLAIR.png" alt="GRESIE MONTCLAIR"
+                        class="product-image hover-cycle"
+                        data-images='["images/colectie-spania/GRESIE MONTCLAIR.png","images/colectie-spania/GRESIE MONTCLAIR2.png", "images/colectie-spania/GRESIE MONTCLAIR3.png"]'>
                     <div class="product-info">
                         <h3>GRESIE MONTCLAIR</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1140,7 +1256,8 @@
 
                 <!-- Produs 56 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE DORSET SAND" class="product-image">
+                    <img src="images/colectie-spania/GRESIE DORSET SAND.png" alt="GRESIE DORSET SAND"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE DORSET SAND</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1159,8 +1276,10 @@
                 </div>
 
                 <!-- Produs 57 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE DORSET WHITE" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE DORSET WHITE.png" alt="GRESIE DORSET WHITE"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE DORSET WHITE2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE DORSET WHITE.png'">
                     <div class="product-info">
                         <h3>GRESIE DORSET WHITE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1180,7 +1299,8 @@
 
                 <!-- Produs 58 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE DORSET LINEN" class="product-image">
+                    <img src="images/colectie-spania/GRESIE DORSET LINEN.png" alt="GRESIE DORSET LINEN"
+                        class="product-image">
                     <div class="product-info">
                         <h3>GRESIE DORSET LINEN</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1200,7 +1320,7 @@
 
                 <!-- Produs 59 -->
                 <div class="product-card">
-                    <img src="images/exterior.png" alt="RLV DORSET SAND" class="product-image">
+                    <img src="images/colectie-spania/RLV DORSET SAND.png" alt="RLV DORSET SAND" class="product-image">
                     <div class="product-info">
                         <h3>RLV DORSET SAND</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1219,8 +1339,10 @@
                 </div>
 
                 <!-- Produs 60 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE CALCARE WHITE" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE CALCARE WHITE.png" alt="GRESIE CALCARE WHITE"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE CALCARE WHITE2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE CALCARE WHITE.png'">
                     <div class="product-info">
                         <h3>GRESIE CALCARE WHITE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1239,8 +1361,10 @@
                 </div>
 
                 <!-- Produs 61 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE CALCARE LINEN" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE CALCARE LINEN.png" alt="GRESIE CALCARE LINEN"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE CALCARE LINEN2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE CALCARE LINEN.png'">
                     <div class="product-info">
                         <h3>GRESIE CALCARE LINEN</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1259,8 +1383,10 @@
                 </div>
 
                 <!-- Produs 62 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE CALCARE SILVER" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE CALCARE SILVER.png" alt="GRESIE CALCARE SILVER"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE CALCARE SILVER2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE CALCARE SILVER.png'">
                     <div class="product-info">
                         <h3>GRESIE CALCARE SILVER</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1279,8 +1405,10 @@
                 </div>
 
                 <!-- Produs 63 -->
-                <div class="product-card">
-                    <img src="images/exterior.png" alt="GRESIE BERGAMO WHITE" class="product-image">
+                <div class="product-card">                    <div class="image-indicator"></div>
+                    <img src="images/colectie-spania/GRESIE BERGAMO WHITE.png" alt="GRESIE BERGAMO WHITE"
+                        class="product-image" onmouseover="this.src='images/colectie-spania/GRESIE BERGAMO WHITE2.png'"
+                        onmouseout="this.src='images/colectie-spania/GRESIE BERGAMO WHITE.png'">
                     <div class="product-info">
                         <h3>GRESIE BERGAMO WHITE</h3>
                         <p style="margin-bottom: 0.5rem; color: #ccc;">
@@ -1298,17 +1426,26 @@
                     </div>
                 </div>
 
-</div>
+            </div>
         </div>
-    </section>
 
     <footer>
         <div class="social-links" style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 20px;">
-            <a href="https://www.facebook.com/p/CN-Design-100076216737578/" target="_blank" rel="noopener noreferrer" style="color: #fff; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+            <a href="https://www.facebook.com/p/CN-Design-100076216737578/" target="_blank" rel="noopener noreferrer"
+                style="color: #fff; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.8"
+                onmouseout="this.style.opacity=1">
                 <i data-feather="facebook"></i>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" style="color: #fff; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+            <a href="#" target="_blank" rel="noopener noreferrer" style="color: #fff; transition: opacity 0.3s;"
+                onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
                 <i data-feather="instagram"></i>
+            </a>
+        </div>
+        
+        <div class="whatsapp-contact" style="margin-bottom: 1rem; display: flex; justify-content: center;">
+            <a href="https://wa.me/40742373923" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 1.1rem; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                0742373923
             </a>
         </div>
         <p>&copy; 2026 CN Design. Toate drepturile rezervate.</p>
@@ -1322,7 +1459,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('product-search');
-            if(searchInput) {
+            if (searchInput) {
                 searchInput.addEventListener('input', function (e) {
                     const searchTerm = e.target.value.toLowerCase();
                     const cards = document.querySelectorAll('.product-card');
@@ -1337,6 +1474,30 @@
                     });
                 });
             }
+
+            // Hover cycle logic for multiple images
+            document.querySelectorAll('.hover-cycle').forEach(img => {
+                let images = [];
+                try {
+                    images = JSON.parse(img.getAttribute('data-images'));
+                } catch (e) { }
+
+                if (images.length > 1) {
+                    let interval;
+                    let idx = 0;
+                    img.addEventListener('mouseenter', () => {
+                        interval = setInterval(() => {
+                            idx = (idx + 1) % images.length;
+                            img.src = images[idx];
+                        }, 1000); // cycles every 1 second
+                    });
+                    img.addEventListener('mouseleave', () => {
+                        clearInterval(interval);
+                        idx = 0;
+                        img.src = images[0];
+                    });
+                }
+            });
         });
     </script>
 </body>

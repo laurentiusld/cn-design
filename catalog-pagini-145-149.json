@@ -1,0 +1,46 @@
+{
+  "source_pages": "145-149",
+  "collection_name": "GRESIE/FAIANȚĂ PLACATĂ (SMĂLȚUITĂ) 300X600 MM",
+  "products": [
+    {
+      "nume": "GRESIE ELE-523-HD-R",
+      "colectie": "FAIANȚĂ",
+      "suprafata": "Netedă",
+      "culoare": "Maro",
+      "finisaj": "Lucios",
+      "model": "4 fețe",
+      "dimensiune": "300x600 mm",
+      "image": "images/gresie-ele-523-hd-r.jpg"
+    },
+    {
+      "nume": "GRESIE FELDSPAR PIETRA NATURALA (E15-1289)",
+      "colectie": "FAIANȚĂ / HD",
+      "suprafata": "Netedă",
+      "culoare": "Gri",
+      "finisaj": "-",
+      "model": "4 fețe",
+      "dimensiune": "300x600 mm",
+      "image": "images/gresie-feldspar-pietra-naturala-e15-1289.jpg"
+    },
+    {
+      "nume": "GRESIE TOPAZ PIETRA NATURALA (E27-1528)",
+      "colectie": "FAIANȚĂ / HD",
+      "suprafata": "Netedă",
+      "culoare": "Maro",
+      "finisaj": "Lucios",
+      "model": "4 fețe",
+      "dimensiune": "300x600 mm",
+      "image": "images/gresie-topaz-pietra-naturala-e27-1528.jpg"
+    },
+    {
+      "nume": "GRESIE ZDROBIT PIETRA NATURALA (E36-1702)",
+      "colectie": "FAIANȚĂ",
+      "suprafata": "Netedă",
+      "culoare": "Maro",
+      "finisaj": "Lucios",
+      "model": "4 fețe",
+      "dimensiune": "300x600 mm",
+      "image": "images/gresie-zdrobit-pietra-naturala-e36-1702.jpg"
+    }
+  ]
+}

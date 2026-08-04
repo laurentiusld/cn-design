@@ -1,0 +1,35 @@
+{
+  "collection_name": "COLECȚIA GOLD Plăci gresie 600X1200 MM",
+  "products": [
+    {
+      "nume": "GRESIE BLACK GOLDEN VEINS",
+      "colectie": "COLECȚIA GOLD Plăci gresie 600X1200 MM",
+      "suprafata": "Netedă",
+      "culoare": "Negru",
+      "finisaj": "-",
+      "model": "1 față",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-black-golden-veins.jpg"
+    },
+    {
+      "nume": "GRESIE BROWN GOLDEN VEINS",
+      "colectie": "COLECȚIA GOLD Plăci gresie 600X1200 MM",
+      "suprafata": "Netedă",
+      "culoare": "Alb",
+      "finisaj": "-",
+      "model": "3 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-brown-golden-veins.jpg"
+    },
+    {
+      "nume": "GRESIE WHITE GOLDEN VEINS",
+      "colectie": "COLECȚIA GOLD Plăci gresie 600X1200 MM",
+      "suprafata": "Netedă",
+      "culoare": "Alb",
+      "finisaj": "Lucios",
+      "model": "1 față",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-white-golden-veins.jpg"
+    }
+  ]
+}
