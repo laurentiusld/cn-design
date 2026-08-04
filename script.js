@@ -38,11 +38,14 @@ function initializeFilters(containerSelector) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
 
-    // Check if we are on a products page (todoceram or spania)
     if (!document.getElementById('product-search') && !window.location.pathname.includes('spania.html') && !window.location.pathname.includes('todoceram.html')) return;
 
     const cards = container.querySelectorAll('.product-card');
     const filterData = {};
+
+    function normalizeString(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    }
 
     cards.forEach(card => {
         const props = card.querySelectorAll('p');
@@ -50,10 +53,14 @@ function initializeFilters(containerSelector) {
             const strong = p.querySelector('strong');
             if (strong) {
                 const key = strong.textContent.replace(':', '').trim();
-                let value = p.textContent.replace(strong.textContent, '').trim();
-                if (value && value !== 'N/A' && value.toLowerCase() !== 'n/a' && value !== '') {
-                    if (!filterData[key]) filterData[key] = new Set();
-                    filterData[key].add(value);
+                let rawValue = p.textContent.replace(strong.textContent, '').trim();
+                if (rawValue && rawValue.toLowerCase() !== 'n/a' && rawValue !== '') {
+                    if (!filterData[key]) filterData[key] = new Map();
+                    const normalized = normalizeString(rawValue);
+                    if (!filterData[key].has(normalized)) {
+                        const displayValue = rawValue.charAt(0).toUpperCase() + rawValue.slice(1).toLowerCase();
+                        filterData[key].set(normalized, displayValue);
+                    }
                 }
             }
         });
@@ -75,12 +82,14 @@ function initializeFilters(containerSelector) {
             select.className = 'filter-select';
             select.innerHTML = `<option value="">Orice ${key}</option>`;
             
-            Array.from(filterData[key]).sort().forEach(val => {
-                const option = document.createElement('option');
-                option.value = val.toLowerCase();
-                option.textContent = val;
-                select.appendChild(option);
-            });
+            Array.from(filterData[key].entries())
+                .sort((a, b) => a[1].localeCompare(b[1]))
+                .forEach(([normVal, displayVal]) => {
+                    const option = document.createElement('option');
+                    option.value = normVal;
+                    option.textContent = displayVal;
+                    select.appendChild(option);
+                });
 
             select.addEventListener('change', () => applyFilters());
             selects[key] = select;
@@ -100,12 +109,12 @@ function initializeFilters(containerSelector) {
         });
 
         const searchInput = document.getElementById('product-search');
-        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        const searchTerm = searchInput ? normalizeString(searchInput.value) : '';
 
         cards.forEach(card => {
             let show = true;
             
-            if (searchTerm && !card.innerText.toLowerCase().includes(searchTerm)) {
+            if (searchTerm && !normalizeString(card.innerText).includes(searchTerm)) {
                 show = false;
             }
 
@@ -116,8 +125,8 @@ function initializeFilters(containerSelector) {
                     const strong = p.querySelector('strong');
                     if (strong) {
                         const key = strong.textContent.replace(':', '').trim();
-                        const value = p.textContent.replace(strong.textContent, '').trim().toLowerCase();
-                        cardProps[key] = value;
+                        const rawValue = p.textContent.replace(strong.textContent, '').trim();
+                        cardProps[key] = normalizeString(rawValue);
                     }
                 });
 
@@ -164,3 +173,20 @@ function initializeFilters(containerSelector) {
         observer.observe(section);
       });
   });
+
+
+// About me toggle
+function toggleAboutMe() {
+    const content = document.getElementById('aboutMeContent');
+    const btn = document.getElementById('readMoreBtn');
+    if (!content || !btn) return;
+    
+    content.classList.toggle('expanded');
+    if (content.classList.contains('expanded')) {
+        btn.textContent = 'Afișează mai puțin';
+    } else {
+        btn.textContent = 'Citește mai mult';
+    }
+}
+
+

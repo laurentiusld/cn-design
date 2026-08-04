@@ -1,0 +1,35 @@
+{
+  "collection_name": "COLECȚIA SUPER HG Plăci gresie 600X1200 MM",
+  "products": [
+    {
+      "nume": "GRESIE OCEAN GOLD BLUE",
+      "colectie": "COLECȚIA SUPER HG Plăci gresie 600X1200 MM",
+      "suprafata": "Netedă",
+      "culoare": "Albastru",
+      "finisaj": "Lucios",
+      "model": "4 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-ocean-gold-blue.jpg"
+    },
+    {
+      "nume": "GRESIE SANGA BROWN",
+      "colectie": "COLECȚIA SUPER HG Plăci gresie 600X1200 MM",
+      "suprafata": "Netedă",
+      "culoare": "Maro",
+      "finisaj": "Lucios",
+      "model": "4 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-sanga-brown.jpg"
+    },
+    {
+      "nume": "GRESIE SPIDER WEB GOLD",
+      "colectie": "COLECȚIA SUPER HG Plăci gresie 600X1200 MM",
+      "suprafata": "Netedă",
+      "culoare": "Maro",
+      "finisaj": "Lucios",
+      "model": "3 fețe",
+      "dimensiune": "600x1200 mm",
+      "image": "images/gresie-spider-web-gold.jpg"
+    }
+  ]
+}
