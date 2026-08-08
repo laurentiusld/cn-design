@@ -682,3 +682,64 @@ footer {
 }
 
 
+
+
+
+/* Dropdown Navigation */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--surface-color);
+  min-width: 220px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0;
+}
+
+/* The hover bridge to prevent losing hover */
+.dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -50%;
+  width: 200%;
+  height: 30px; 
+  background: transparent;
+}
+
+.dropdown-content a {
+  color: #fff !important;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--accent-color);
+  color: #000 !important;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown > a::after {
+  content: ' ▼';
+  font-size: 0.7em;
+  opacity: 0.7;
+}
