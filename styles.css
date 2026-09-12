@@ -228,6 +228,10 @@ section {
   background-position: right 15px center;
   padding-right: 45px;
   transition: border-color 0.3s;
+  max-width: 220px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
