@@ -679,6 +679,14 @@ footer {
   }
   
   .contact-wrapper { grid-template-columns: 1fr; }
+  
+  .dropdown-content a {
+    text-align: center;
+  }
+  
+  .dropdown {
+    justify-content: center;
+  }
 }
 
 
