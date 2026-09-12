@@ -5,7 +5,7 @@ nav_dropdown = '''<li class="dropdown">
                 <a href="produse.html">Produse</a>
                 <div class="dropdown-content">
                     <a href="gresie-faianta.html">Catalog MarLiv</a>
-                    <a href="todoceram.html">Catalog Todoceram</a>
+                    <a href="todoceram.html">Colecția 2026/2027</a>
                     <a href="spania.html">Colecție Spania</a>
                 </div>
             </li>'''
