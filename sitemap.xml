@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.cndesign.ro/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://www.cndesign.ro/contact.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cndesign.ro/despre-mine.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cndesign.ro/gresie-faianta.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cndesign.ro/index.html</loc>
-    <lastmod>2026-10-17</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://www.cndesign.ro/produse.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cndesign.ro/proiectele-noastre.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cndesign.ro/spania.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cndesign.ro/todoceram.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cndesign.ro/termeni-si-conditii.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.cndesign.ro/politica-cookies.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>

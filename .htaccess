@@ -1,0 +1,17 @@
+# CN Design - Redirecționări SEO & HTTPS
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirecționare permanentă (301) de la HTTP la HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirecționare permanentă (301) de la non-WWW la WWW
+RewriteCond %{HTTP_HOST} ^cndesign\.ro$ [NC]
+RewriteRule ^(.*)$ https://www.cndesign.ro/$1 [L,R=301]
+
+# 3. Redirecționare permanentă (301) de la /index.html la /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://www.cndesign.ro/ [R=301,L]
+</IfModule>
