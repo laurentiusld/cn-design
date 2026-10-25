@@ -247,3 +247,250 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// ==========================================================================
+// Cookie Consent & Preferences Management (GDPR & Google Consent Mode v2)
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const CONSENT_STORAGE_KEY = 'cn_cookie_preferences';
+
+    // Cookie Icon SVG
+    const cookieSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M7 13v.01"></path><path d="M12 16v.01"></path><path d="M16 12v.01"></path></svg>`;
+
+    // Build Banner & Overlay HTML
+    const cookieBannerHTML = `
+        <div id="cookieOverlay" class="cookie-banner-overlay"></div>
+        <div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookieBannerTitle">
+            <div class="cookie-banner-header">
+                <div class="cookie-icon-wrapper">
+                    ${cookieSvg}
+                </div>
+                <h3 id="cookieBannerTitle">Setări de Confidențialitate & Cookie-uri</h3>
+            </div>
+            <div class="cookie-banner-text">
+                Folosim cookie-uri pentru a vă garanta o experiență excelentă de navigare pe site-ul nostru, pentru funcționalități esențiale și pentru a analiza traficul (prin Google Analytics). Puteți alege să acceptați toate cookie-urile, să le refuzați pe cele opționale sau să vă personalizați opțiunile oricând. Consultați <a href="termeni-si-conditii.html">Termenii și Condițiile</a> și <a href="politica-cookies.html">Politica de Cookie-uri</a>.
+            </div>
+
+            <!-- Expandable Detailed Preferences -->
+            <div class="cookie-preferences-panel" id="cookiePreferencesPanel">
+                <!-- Strict Necessary -->
+                <div class="cookie-item">
+                    <div class="cookie-item-info">
+                        <div class="cookie-item-title">
+                            <span>Cookie-uri Strict Necesare</span>
+                            <span class="cookie-badge cookie-badge-necessary">Mereu Active</span>
+                        </div>
+                        <p class="cookie-item-desc">Esențiale pentru buna funcționare tehnică a site-ului, securitate și memorarea consimțământului dumneavoastră. Nu pot fi dezactivate.</p>
+                    </div>
+                    <label class="cookie-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Analytics -->
+                <div class="cookie-item">
+                    <div class="cookie-item-info">
+                        <div class="cookie-item-title">
+                            <span>Statistici și Analiză Trafic</span>
+                            <span class="cookie-badge cookie-badge-optional">Opțional</span>
+                        </div>
+                        <p class="cookie-item-desc">Ne ajută să înțelegem modul în care vizitatorii utilizează site-ul (prin Google Analytics), ajutându-ne să îmbunătățim performanța fără a colecta date personale de identificare directă.</p>
+                    </div>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookieAnalyticsToggle">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Marketing -->
+                <div class="cookie-item">
+                    <div class="cookie-item-info">
+                        <div class="cookie-item-title">
+                            <span>Marketing și Publicitate</span>
+                            <span class="cookie-badge cookie-badge-optional">Opțional</span>
+                        </div>
+                        <p class="cookie-item-desc">Utilizate pentru a evalua eficiența campaniilor noastre și comunicarea pe rețele sociale (ex: Facebook, Instagram).</p>
+                    </div>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookieMarketingToggle">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+
+                <div class="cookie-prefs-actions">
+                    <button type="button" class="btn-cookie btn-cookie-deny" id="btnSaveCookiePreferences">Salvează Preferințele</button>
+                    <button type="button" class="btn-cookie btn-cookie-accept" id="btnAcceptAllInPrefs">Acceptă Toate</button>
+                </div>
+            </div>
+
+            <!-- Main Actions -->
+            <div class="cookie-banner-actions" id="cookieBannerMainActions">
+                <button type="button" class="btn-cookie btn-cookie-accept" id="btnAcceptAllCookies">Acceptă Toate</button>
+                <button type="button" class="btn-cookie btn-cookie-deny" id="btnDenyAllCookies">Refuză Toate</button>
+                <button type="button" class="btn-cookie btn-cookie-customize" id="btnCustomizeCookies">Personalizează</button>
+            </div>
+        </div>
+
+        <!-- Floating Button to Re-open Preferences Anytime -->
+        <button type="button" class="cookie-floating-trigger" id="cookieFloatingBtn" aria-label="Setări Cookie-uri">
+            ${cookieSvg}
+            <span class="tooltip">Setări Cookie-uri</span>
+        </button>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', cookieBannerHTML);
+
+    const banner = document.getElementById('cookieBanner');
+    const overlay = document.getElementById('cookieOverlay');
+    const prefsPanel = document.getElementById('cookiePreferencesPanel');
+    const analyticsToggle = document.getElementById('cookieAnalyticsToggle');
+    const marketingToggle = document.getElementById('cookieMarketingToggle');
+    const btnAcceptAll = document.getElementById('btnAcceptAllCookies');
+    const btnDenyAll = document.getElementById('btnDenyAllCookies');
+    const btnCustomize = document.getElementById('btnCustomizeCookies');
+    const btnSavePrefs = document.getElementById('btnSaveCookiePreferences');
+    const btnAcceptAllInPrefs = document.getElementById('btnAcceptAllInPrefs');
+    const floatingBtn = document.getElementById('cookieFloatingBtn');
+
+    // Helper: update Google Consent Mode v2
+    function applyGoogleConsent(analyticsGranted, marketingGranted) {
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+                'analytics_storage': analyticsGranted ? 'granted' : 'denied',
+                'ad_storage': marketingGranted ? 'granted' : 'denied',
+                'ad_user_data': marketingGranted ? 'granted' : 'denied',
+                'ad_personalization': marketingGranted ? 'granted' : 'denied'
+            });
+        }
+    }
+
+    // Read stored preferences
+    function getStoredPreferences() {
+        try {
+            const data = localStorage.getItem(CONSENT_STORAGE_KEY);
+            return data ? JSON.parse(data) : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    // Save preferences
+    function savePreferences(analytics, marketing) {
+        const prefs = {
+            necessary: true,
+            analytics: Boolean(analytics),
+            marketing: Boolean(marketing),
+            timestamp: new Date().toISOString()
+        };
+        try {
+            localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(prefs));
+        } catch (e) {
+            console.warn('Could not save cookie preferences to localStorage', e);
+        }
+        applyGoogleConsent(prefs.analytics, prefs.marketing);
+        hideBanner();
+    }
+
+    // Show/Hide Banner
+    function showBanner(showPanel = false) {
+        const stored = getStoredPreferences();
+        if (stored) {
+            analyticsToggle.checked = Boolean(stored.analytics);
+            marketingToggle.checked = Boolean(stored.marketing);
+        } else {
+            analyticsToggle.checked = true;
+            marketingToggle.checked = false;
+        }
+
+        if (showPanel) {
+            prefsPanel.classList.add('active');
+            btnCustomize.textContent = 'Ascunde opțiuni';
+            overlay.classList.add('show');
+        } else {
+            prefsPanel.classList.remove('active');
+            btnCustomize.textContent = 'Personalizează';
+            overlay.classList.remove('show');
+        }
+
+        banner.classList.add('show');
+    }
+
+    function hideBanner() {
+        banner.classList.remove('show');
+        overlay.classList.remove('show');
+        prefsPanel.classList.remove('active');
+        btnCustomize.textContent = 'Personalizează';
+    }
+
+    // Global method to open preferences
+    window.openCookiePreferencesModal = function () {
+        showBanner(true);
+    };
+
+    // Event Listeners for actions
+    btnAcceptAll.addEventListener('click', () => {
+        savePreferences(true, true);
+    });
+
+    btnAcceptAllInPrefs.addEventListener('click', () => {
+        savePreferences(true, true);
+    });
+
+    btnDenyAll.addEventListener('click', () => {
+        savePreferences(false, false);
+    });
+
+    btnCustomize.addEventListener('click', () => {
+        const isCurrentlyOpen = prefsPanel.classList.contains('active');
+        if (isCurrentlyOpen) {
+            prefsPanel.classList.remove('active');
+            btnCustomize.textContent = 'Personalizează';
+            overlay.classList.remove('show');
+        } else {
+            prefsPanel.classList.add('active');
+            btnCustomize.textContent = 'Ascunde opțiuni';
+            overlay.classList.add('show');
+        }
+    });
+
+    btnSavePrefs.addEventListener('click', () => {
+        savePreferences(analyticsToggle.checked, marketingToggle.checked);
+    });
+
+    if (floatingBtn) {
+        floatingBtn.addEventListener('click', () => {
+            showBanner(true);
+        });
+    }
+
+    // Listen for footer links or any trigger with class .open-cookie-settings-trigger
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('.open-cookie-settings-trigger') || 
+                        (e.target.id === 'openCookieSettingsBtn' ? e.target : null);
+        if (trigger) {
+            e.preventDefault();
+            showBanner(true);
+        }
+    });
+
+    // Close when clicking overlay if preferences already exist
+    overlay.addEventListener('click', () => {
+        if (getStoredPreferences()) {
+            hideBanner();
+        }
+    });
+
+    // Initialization check
+    const currentPrefs = getStoredPreferences();
+    if (!currentPrefs) {
+        // First visit - display the cookie banner
+        setTimeout(() => {
+            showBanner(false);
+        }, 600);
+    } else {
+        // Ensure consent is applied in gtag on subsequent page views
+        applyGoogleConsent(currentPrefs.analytics, currentPrefs.marketing);
+    }
+});
+

@@ -4,11 +4,39 @@
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H711BGWC9"></script>
-    <script>
+        <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      
+      // Google Consent Mode v2 - Default state based on saved preferences
+      try {
+        var savedConsent = localStorage.getItem('cn_cookie_preferences');
+        if (savedConsent) {
+          var prefs = JSON.parse(savedConsent);
+          gtag('consent', 'default', {
+            'analytics_storage': prefs.analytics ? 'granted' : 'denied',
+            'ad_storage': prefs.marketing ? 'granted' : 'denied',
+            'ad_user_data': prefs.marketing ? 'granted' : 'denied',
+            'ad_personalization': prefs.marketing ? 'granted' : 'denied'
+          });
+        } else {
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+          });
+        }
+      } catch (e) {
+        gtag('consent', 'default', {
+          'analytics_storage': 'denied',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        });
+      }
 
+      gtag('js', new Date());
       gtag('config', 'G-7H711BGWC9');
     </script>
     <meta charset="UTF-8">
@@ -221,6 +249,14 @@
                 </svg>
                 0742373923
             </a>
+        </div>
+
+                <div class="footer-legal-links" style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; font-size: 0.9rem;">
+            <a href="termeni-si-conditii.html" style="color: #bbb; transition: color 0.3s;">Termeni și Condiții</a>
+            <span style="color: #555;">•</span>
+            <a href="politica-cookies.html" style="color: #bbb; transition: color 0.3s;">Politică Cookies & Confidențialitate</a>
+            <span style="color: #555;">•</span>
+            <a href="javascript:void(0)" class="open-cookie-settings-trigger" style="color: var(--accent-color); text-decoration: underline; cursor: pointer;">Setări Cookie-uri</a>
         </div>
 
         <div class="company-details" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 15px;">
